@@ -1,0 +1,66 @@
+/* CSS Variables for Light Theme (Default) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --textarea-bg: #f9f9f9;
+    --textarea-border: #cccccc;
+    --btn-bg: #007bff;
+    --btn-text: #ffffff;
+}
+
+/* CSS Variables for Dark Theme */
+body.dark {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --textarea-bg: #1e1e1e;
+    --textarea-border: #444444;
+    --btn-bg: #bb86fc;
+    --btn-text: #000000;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+main {
+    width: 100%;
+    max-width: 600px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--textarea-bg);
+    border: 1px solid var(--textarea-border);
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+/* Counter Classes */
+.warning {
+    color: orange;
+}
+
+.over {
+    color: red;
+    font-weight: bold;
+}
