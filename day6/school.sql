@@ -27,7 +27,7 @@ CREATE TABLE enrolments (
 -- ==========================================
 -- 2. INSERT SAMPLE DATA
 -- ==========================================
--- 4 students (the 4th has no enrolments, to test Query 4)
+-- 4 students (the 4th has no enrolments, to ensure Query 4 works)
 INSERT INTO students (first_name, last_name, email) VALUES
 ('Alice', 'Smith', 'alice@example.com'),
 ('Bob', 'Johnson', 'bob@example.com'),
@@ -52,14 +52,14 @@ INSERT INTO enrolments (student_id, course_id, grade) VALUES
 -- 3. REQUIRED QUERIES
 -- ==========================================
 
--- Query 1: All courses for one student (by name, e.g., 'Alice Smith')
+-- Query 1: All courses for one student (by name)
 SELECT c.course_name, e.grade
 FROM students s
 JOIN enrolments e ON s.student_id = e.student_id
 JOIN courses c ON e.course_id = c.course_id
 WHERE s.first_name = 'Alice' AND s.last_name = 'Smith';
 
--- Query 2: All students on one course (e.g., 'Introduction to Computer Science')
+-- Query 2: All students on one course
 SELECT s.first_name, s.last_name, e.grade
 FROM courses c
 JOIN enrolments e ON c.course_id = e.course_id
@@ -78,7 +78,9 @@ FROM students s
 LEFT JOIN enrolments e ON s.student_id = e.student_id
 WHERE e.enrolment_id IS NULL;
 
--- Query 5: Update one enrolment's grade (e.g., change Alice's grade in course 1 to 'A+')
+-- Query 5: Update one enrolment's grade
 UPDATE enrolments
 SET grade = 'A+'
 WHERE student_id = 1 AND course_id = 1;
+-- Adding the recommended index
+CREATE INDEX idx_enrolments_student_id ON enrolments(student_id);
