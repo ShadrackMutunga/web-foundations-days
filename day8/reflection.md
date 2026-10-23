@@ -1,0 +1,7 @@
+# Reflection
+
+The most difficult concept in this course was understanding system architecture and how to scale applications for high traffic. Initially, the idea of load balancers, read replicas, and caching felt abstract. I overcame this by building the "SnapShare" and "QuickNotes" projects, where I had to draw architecture diagrams and calculate traffic estimates. Seeing how a database read replica actually offloads work from the primary database made the concept click for me.
+
+If I were to improve my capstone project (QuickNotes), I would focus on the frontend error handling. During the project, I struggled with formatting the Markdown files and ensuring the API client handled all edge cases gracefully. Based on the feedback I received, I realized that a robust application needs distinct visual states for loading, success, and error. I would rewrite the `api.js` file to include more granular error messages for the user, rather than just a generic "error occurred" message.
+
+Next, I plan to learn backend development using Node.js and Express. While I now understand how to design an API and a database schema on paper, I want to learn how to actually build the server that processes those requests. I also want to learn how to deploy these applications to a cloud provider like AWS to see how load balancers work in a real-world environment.
